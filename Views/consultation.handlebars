@@ -1,0 +1,46 @@
+<div class="main-content">
+  <section class="etat-commande">
+    <h1>{{pageTitle}}</h1>
+         
+    
+    {{#each commandes}}
+      <form class="commande-item-form" data-commande-id="{{id_commande}}">
+        <div class="commande-item">
+          <p class="commande-numero">Commande #{{id_commande}}</p>
+
+          <div class="change-status-container">
+            <select class="commande-status" name="nouvelEtat">
+              {{#each ../etatCommandeElements}}
+             {{#notEqual this.nom "panier"}}
+                   <option value="{{this.nom}}" {{#if (isEqual this.nom etat_commande)}}selected{{/if}}>{{this.nom}}</option>
+             {{/notEqual}}
+              {{else}}
+                <option disabled>Aucun état disponible</option>
+              {{/each}}
+            </select>
+            <button type="button" class="change-status-btn" data-commande-id="{{id_commande}}">
+              Changer le statut
+            </button>
+            <button type="button" class="arrow-btn" data-commande-id="{{id_commande}}">
+              <span class="arrow">Details..</span> 
+            </button>
+          </div>
+          <p class="current-status">Statut actuel : {{etat_commande}}</p>
+          <div class="products-container hidden">
+            {{#each this.produits}}
+              <p>■ Article: {{this.nom_produit}}</p>
+              <img class="image-produit" src="{{this.chemin_image}}" alt="{{this.nom}}">
+              <p>Prix Unitaire :{{this.prix}} $</p>
+              <p>Quantité :{{this.quantite}}</p>
+            {{/each}}
+            
+          </div>
+        </div>
+      </form>
+    {{/each}}
+    {{#unless commandes.length}}
+      <p class="empty-message">Aucune commande trouvée.</p>
+    {{/unless}}
+  </section>
+</div>
+<script type="module" src="/js/etatcommande.js"></script>

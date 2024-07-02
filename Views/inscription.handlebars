@@ -1,0 +1,17 @@
+<body class="page-inscription">
+    <div class="container-inscription">
+        <h2 class="page-title">{{titre}}</h2>
+
+        <form id="form-auth-inscription">
+            <label class="form-label">Nom de Famille: <input type="nom" name="nom" id="input-nom" class="form-input"></label>
+            <label class="form-label">Prénom: <input type="prenom" name="prenom" id="input-prenom" class="form-input"></label>
+            <label class="form-label">Adresse Électronique: <input type="text" name="courriel" id="input-courriel" class="form-input"></label>
+            <label class="form-label">Mot de Passe: <input type="password" name="password" id="input-password" class="form-input"></label>
+            <input type="submit" value="{{bouton}}" id="inscription" class="form-submit">
+
+            <div class="erreur form-erreur" id="form-erreur"></div>
+        </form>
+
+        <script type="module" src="/js/inscription.js"></script>
+    </div>
+</body>

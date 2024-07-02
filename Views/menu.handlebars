@@ -1,0 +1,18 @@
+<div id="product-container">
+    {{#each produits}}
+        <div class="product produitList">
+            <img src="{{this.chemin_image}}" class="product-image" />
+            <div class="product-info">
+                <h4 class="product-name">{{this.nom}}</h4>
+                <p class="product-price">{{this.prix}} $</p>
+                    <button id="{{this.id_produit}}" class="ajouter" data-nom="{{this.nom}}">Ajouter au panier</button>
+
+                {{!-- {{#if userLoggedIn}}
+                {{else}}
+                    <button id="{{this.id_produit}}" class="ajouter not-allowed" data-nom="{{this.nom}}" disabled>Non autorisé</button>
+                {{/if}} --}}
+            </div>
+        </div>
+    {{/each}}
+</div>
+<script type="module" src="/js/menu.js"></script>

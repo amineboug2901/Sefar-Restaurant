@@ -1,0 +1,38 @@
+<header>
+    <nav class="navbar">
+        <a class="nav-link" href="/">
+            <button class="nav-button">Accueil</button>
+        </a>
+        
+        <a class="nav-link" href="/menu">
+            <button class="nav-button">Menu</button>
+        </a>
+
+        <!-- User non connecté-->
+        {{#unless user}}
+        
+        <a class="nav-link" href="/connexion">
+            <button class="nav-button">Connexion</button>
+        </a>
+        <a class="nav-link" href="/inscription">
+            <button class="nav-button">S'inscrire</button>
+        </a>
+        {{/unless}}
+
+        <!-- User connecté-->
+<!-- User connecté-->
+{{#if user}}
+    <a class="nav-link" href="/panier">
+        <button class="nav-button">Panier</button>
+    </a>
+
+    <a class="nav-link" href="/consultation">
+        <button class="nav-button">État De Ma Commande</button>
+    </a>
+
+    
+        <p class="nav-username">{{user.prenom}} {{user.nom}}</p>
+{{/if}}
+
+    </nav>
+</header>

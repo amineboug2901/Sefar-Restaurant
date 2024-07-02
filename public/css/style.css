@@ -1,0 +1,687 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #4d4d4d;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    z-index: 2; /* Ensure a lower z-index value for the body */
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.main-content {
+    position: relative;
+    z-index: 3; /* Set a higher z-index value */
+    color: #ddd;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #ff7b00;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 2; /* Add a higher z-index value */
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-link {
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 5px 10px;
+    position: relative;
+}
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px; /* Adjust the border thickness as needed */
+    background-color: #fff; /* Set initial border color */
+    transform: scaleX(0); /* Initial state of the border is not visible */
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-in-out;
+}
+.nav-link:hover::after {
+    transform: scaleX(1); /* Expand the border on hover */
+    transform-origin: bottom left;
+}
+
+.nav-button {
+    background-color: transparent;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+.nav-button:hover {
+    background-color: #4b4b4b;
+    font-weight: bold;
+    transform: scale(1.05);
+}
+
+.nav-button:active {
+    transform: scale(0.95);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 50px;
+}
+
+
+
+
+.product {
+    flex: 1 1 calc(25% - 30px); /* 25% pour afficher 4 articles par ligne, 30px pour la marge */
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 8px;
+    width: 250px;
+}
+.hidden {
+  display: none;
+}
+
+
+.product:hover {
+    transform: scale(1.05);
+}
+
+.product-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.product-info {
+    margin-top: 15px;
+}
+
+.product-name {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+    color: #333;
+    text-align: center;
+}
+
+.product-price {
+    font-size: 1.2em;
+    color: #000; /* Couleur noire */
+    display: block;
+    margin-top: 8px;
+    padding: 5px; /* Ajout de rembourrage pour le contour */
+    border: 1px solid #000; /* Couleur du contour */
+    border-radius: 5px; /* Arrondi des coins */
+}
+
+.product-price::before {
+    content: "Prix : "; /* Ajout d'un libellé avant le prix */
+    font-weight: bold;
+    color: #555; /* Couleur du libellé */
+    display: block;
+    font-size: 0.9em; /* Taille de police du libellé */
+}
+
+.ajouter {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.ajouter:hover {
+    background-color: #ff0000;
+}
+
+
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0px -10px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1; /* Ensure the footer is behind other elements */
+}
+
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.wrapper a {
+    color: #4caf50;
+    text-decoration: none;
+}
+
+.wrapper a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+}
+
+#panier {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+}
+
+.produit {
+    display: flex;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.produit:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.image-produit {
+    max-width: 150px;
+    height: 150px; /* Hauteur fixe pour créer des images carrées */
+    object-fit: cover; /* Pour conserver le ratio d'aspect tout en coupant l'excédent */
+    margin-right: 15px;
+    border-radius: 8px;
+    margin: 10px;
+
+}
+
+.details-produit {
+    flex-grow: 1;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+}
+
+
+.quantite-plus,
+.quantite-minus {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.quantite-plus:hover,
+.quantite-minus:hover {
+    background-color: #45a049;
+}
+
+.retirer-du-panier {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.retirer-du-panier:hover {
+    background-color: #cc0000;
+}
+
+.total-panier {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.actions-panier {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.supprimer-commande,
+.confirmer-commande {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.supprimer-commande:hover,
+.confirmer-commande:hover {
+    background-color: #555;
+}
+.not-allowed {
+    cursor: not-allowed;
+    background-color: #ccc; /* Change the background color to indicate it's disabled */
+    color: #666; /* Change the text color to make it visually distinct */
+}
+
+
+body {
+  background-color: #297727;
+  color: #333;
+  font-family: 'Arial', sans-serif;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  padding: 0;
+  z-index: 3;
+}
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #318c00;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 4; /* Add a higher z-index value */
+}
+ 
+.main-content {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 0px;
+}
+ 
+.etat-commande {
+  margin-top: 20px;
+}
+ 
+.commande-item {
+  background-color: #fafafa;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+ 
+.commande-item:hover {
+  background-color: #f0f0f0;
+}
+ 
+.commande-item p {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+ 
+.current-status {
+  font-weight: bold;
+  margin-top: 10px;
+  color: #3498db;
+}
+ 
+.image-produit {
+  max-width: 50px;
+  height: auto;
+  margin-right: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+ 
+.arrow-btn,
+.change-status-btn {
+  background-color: #27ae60;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+ 
+.arrow-btn:hover,
+.change-status-btn:hover {
+  background-color: #219653;
+}
+ 
+.commande-status {
+  padding: 10px;
+  margin-right: 10px;
+  background-color: #ecf0f1;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+ 
+.empty-message {
+  font-style: italic;
+  color: #888;
+  margin-top: 20px;
+}
+ 
+#product-container {
+    display: flex;
+    flex-wrap: wrap; /* Permet de passer à la ligne si l'espace est insuffisant */
+    justify-content: space-between; /* Pour espacer les éléments de manière égale sur la ligne */
+}
+
+.product.produitList {
+    flex: 0 0 calc(25% - 20px); /* 25% pour afficher 4 articles par ligne, 20px pour la marge */
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 0 20px 20px 0; /* Ajout de la marge sur le côté droit et en bas */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* CSS pour la page de Connexion  */
+/* Existing styles for body and other elements */
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.login-form {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: fadeInLabel 0.5s forwards 0.2s ease-in-out;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    opacity: 0;
+    animation: fadeInInput 0.5s forwards 0.4s ease-in-out;
+}
+
+.login-form #Connecter {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0;
+    animation: fadeInButton 0.5s forwards 0.6s ease-in-out;
+}
+
+.login-form #Connecter:hover {
+    background-color: #45a049;
+}
+
+.login-form .erreur {
+    color: #f00;
+    margin-top: 10px;
+    opacity: 0;
+    animation: fadeInError 0.5s forwards 0.8s ease-in-out;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLabel {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInInput {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInButton {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInError {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* CSS pour la page de inscription  */
+
+body.page-inscription {
+    font-family: Arial, sans-serif;
+    background-color: #1c9e20;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container-inscription {
+    max-width: 400px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-in-out;
+    perspective: 1000px;
+}
+
+.container-inscription:hover {
+    transform: rotateY(10deg);
+}
+
+h2.page-title {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    transform: translateZ(30px);
+}
+
+form#form-auth-inscription {
+    display: flex;
+    flex-direction: column;
+    transform: translateZ(20px);
+}
+
+label.form-label {
+    margin: 10px 0;
+    width: 100%;
+    display: block;
+    transform: translateZ(10px);
+}
+
+input.form-input {
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+input.form-input:focus {
+    border-color: #4caf50;
+    transform: scale(1.05);
+}
+
+input.form-submit {
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+input.form-submit:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.erreur.form-erreur {
+    color: #ff0000;
+    margin-top: 10px;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.login-form .erreur {
+    color: #f00;
+    margin-top: 10px;
+    opacity: 0;
+    animation: fadeInError 0.5s forwards 0.8s ease-in-out;
+    font-size: 0.9em; /* Taille de police du message d'erreur */
+}
+
+/* ... (le reste de votre fichier CSS) ... */
+
+@keyframes fadeInError {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.nav-username {
+    color: #ffffff;
+    margin-right: 5px; /* Marge à droite pour l'espacement */
+    height: 20px;
+    font-weight: bold; /* Texte en gras */
+    animation: bounce 2s infinite; /* Animation pendant 2 secondes, en boucle infinie */
+    border: 2px double rgb(255, 255, 255); /* Contour blanc */
+    padding: 10px; /* Espacement interne pour améliorer la lisibilité */
+
+}
+
+.deconnect {
+    background-color: #ff3333; /* Couleur de fond rouge */
+    color: #ffffff; /* Couleur du texte blanc */
+    padding: 10px 20px; /* Espacement interne du bouton */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur pointeur au survol */
+    transition: background-color 0.3s ease; /* Transition en douceur de la couleur de fond */
+}
+
+.deconnect:hover {
+    background-color: #cc0000; /* Nouvelle couleur de fond au survol */
+}

@@ -1,0 +1,200 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>SÉFAR</title>
+</head>
+<body>
+    <div class="main-content">
+        <h1>S É F A R</h1>
+
+        <h3>A propos de nous :</h3>
+<p>Bienvenue chez SÉFAR, l'ultime paradis des saveurs en un clic ! Plongez dans un festin de délices depuis le confort de votre canapé. Des plats audacieux, des classiques revisités, tout est là pour égayer vos papilles.Explorez notre menu en ligne, une aventure gourmande à chaque page. De la commande à la dégustation, c'est une expérience culinaire sans pareille. Des saveurs fraîches, une qualité exceptionnelle, le tout à la vitesse de l'éclair. SÉFAR, c'est bien plus qu'un repas. C'est une explosion de saveurs, une danse de délices. La cuisine devient un spectacle, et chaque plat une star.Alors, prêt pour un voyage gourmand ? <a href="http://localhost:5000/menu" style="color: #00ff00;">Commandez chez SÉFAR</a> , où la bonne cuisine rencontre la modernité. Vos papilles vous remercieront !</p>
+        <h3>Notre Menu :</h3>
+        <ul>
+            <li>Plats Salés</li>
+            <li>Desserts</li>
+            <li>Boissons</li>
+            <li>Suppléments</li>
+            <!-- Add more dishes as needed -->
+        </ul>
+
+
+    <h3>Bienvenue chez SÉFAR - Votre Oasis Culinaire à Ottawa !</h3>
+    
+    <p>Niché en plein cœur de la vibrante ville d'Ottawa, où la gourmandise rencontre la facilité.</p>
+
+    <p class="address">Adresse : 123 Rue de la Saveur, Ottawa, ON, K1A 1A1</p>
+
+    <p>Pour toutes vos questions gourmandes ou pour passer votre commande, contactez-nous au :</p>
+    
+    <p>Téléphone : (555) 123-4567</p>
+
+    <p>Chez SÉFAR, chaque repas devient une expérience inoubliable. Venez nous rejoindre au cœur de la ville pour un festival de saveurs qui éveillera vos sens.</p>
+
+
+        <h3>Réservation :</h3>
+        <p>Pour réserver une table, appelez-nous au (555) 123-4567 ou utilisez notre système de <a style="color: #ff6600" href="http://localhost:5000/menu">Réservation en ligne</a>.</p>
+
+        <script type="module" src="/js/main.js"></script>
+        <link rel="stylesheet" href="../public/css/">
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{!-- Le Style juste pour cet page  --}}
+<style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #ffffff; /* Light gray background color */
+            color: #cccccc; /* Text color */
+            margin-top: 100px;
+            margin-bottom: 100px; /* Remove default margin to ensure full width */
+            padding: 0; /* Remove default padding to ensure full width */
+        }
+
+        .main-content {
+            z-index: 1;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ff6600; /* White background color */
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Box shadow for a subtle lift */
+            border-radius: 8px; /* Rounded corners */
+            animation: fadeIn 1s ease-in-out; /* Add a fade-in animation */
+        }
+
+
+        .main-content h1 {
+            margin-top: 100px;
+            color: #000000; /* Orange header color */
+            font-size: 3em; /* Adjust font size as needed */
+            animation: slideIn 1s ease-in-out; /* Add a slide-in animation */
+        }
+                @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .main-content h3 {
+            color: #ffffff; /* Dark gray subheader color */
+        }
+
+        .main-content p {
+            color: #ffffff; /* Gray text color */
+            margin-bottom: 15px; /* Add some space between paragraphs */
+        }
+
+        .main-content ul {
+            color: rgb(255, 255, 255);
+            list-style-type: none;
+            margin-bottom: 15px;
+        }
+
+        .main-content li {
+            margin-bottom: 5px;
+        }
+
+        .main-content a {
+            color: #ffffff; /* Blue link color */
+            text-decoration: none;
+        }
+
+        .main-content a:hover {
+            text-decoration: underline;
+        }
+
+        header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 2; /* Add a higher z-index value */
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-link {
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 5px 10px;
+    position: relative;
+}
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px; /* Adjust the border thickness as needed */
+    background-color: #ff7300; /* Set initial border color */
+    transform: scaleX(0); /* Initial state of the border is not visible */
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-in-out;
+}
+.nav-link:hover::after {
+    transform: scaleX(1); /* Expand the border on hover */
+    transform-origin: bottom left;
+}
+
+.nav-button {
+    background-color: transparent;
+    font-weight: bold;
+    color: #ff6600;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+.nav-button:hover {
+    background-color: #ff6600;
+    color: white;
+    font-weight: bold;
+    transform: scale(1.05);
+}
+
+.nav-button:active {
+    transform: scale(0.95);
+}
+
+    </style>

@@ -1,0 +1,11 @@
+<footer>
+    <div class="wrapper">
+        &copy; Collège La Cité | Yanis, Amine, Houssam
+    </div>
+    {{#if user}}
+<form action="/api/deconnexion" method="post">
+        <button type="submit" class="deconnect">Déconnecter</button>
+    </form>
+{{/if}}
+
+</footer>

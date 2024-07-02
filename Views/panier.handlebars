@@ -1,0 +1,35 @@
+
+<div id="panier">
+  {{#if produits.length}}
+    {{#each produits}}
+      <div class="produit">
+        <img class="image-produit" src="{{this.chemin_image}}" alt="{{this.nom}}">
+        <div class="details-produit">
+          <h3>{{this.nom_produit}}</h3>
+          <p>Prix : ${{this.prix}} </p>
+          <div class="quantity-control">
+            {{!-- <input type="button" value="+" class="quantite-plus" data-id="{{this.quantite}}"> --}}
+            <button class="quantite-plus" data-nom="{{this.nom_produit}}">+</button>
+            <div>
+              <p class="quantiteProduit">{{this.quantite}}</p>
+            </div>  
+            <button class="quantite-minus" data-nom="{{this.nom_produit}}">-</button>          
+            {{!-- <input type="button" value="-" class="quantite-minus" data-id="{{this.id_produit}}"> --}}
+          </div>
+          <button class="retirer-du-panier" data-nom="{{this.nom_produit}}">Retirer</button>
+        </div>
+      </div>
+    {{/each}}
+    <div class="total-panier">
+      <h2>Total : {{total}} $</h2>
+    </div>
+  {{else}}
+    <p>Votre panier est vide.</p>
+  {{/if}}
+  <div class="actions-panier">
+    <button class="supprimer-commande">Supprimer la commande</button>
+    <button class="confirmer-commande">Confirmer la commande</button>
+    
+  </div>
+</div>
+<script type="module" src="/js/panier.js"></script>

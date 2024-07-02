@@ -1,0 +1,20 @@
+<div class="login-container">
+    <form class="login-form" id="form-auth">
+        <h2>{{titre}}</h2>
+        
+        <label for="input-couriel">Courriel:</label>
+        <input type="text" id="input-couriel">
+        
+        <label for="input-password">Mot de passe:</label>
+        <input type="password" id="input-password">
+        
+        <input type="submit" value="{{bouton}}" id="Connecter">
+        
+        <!-- Affichage du message d'erreur -->
+        {{#if erreur}}
+            <div class="erreur" id="form-erreur">{{erreur}}</div>
+        {{/if}}
+    </form>
+</div>
+
+<script type="module" src="/js/connexion.js"></script>
